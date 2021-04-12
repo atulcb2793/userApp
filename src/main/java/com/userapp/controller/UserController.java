@@ -15,11 +15,6 @@ public class UserController {
     @Autowired
     UserService userService;
     
-    @RequestMapping("/")
-    public String welcome(){
-        return "Welcome to User App !";
-    }
-
     @RequestMapping("/api/users")
     public List<User> getUsers(){
         return userService.getUsers();

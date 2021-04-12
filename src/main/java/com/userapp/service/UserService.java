@@ -27,7 +27,8 @@ public class UserService {
     public List<User> getUsers(){
         return userList;
     }
-
+    
+    
     public List<User> getUserFriends(String id){
             List<User> resultSet = new ArrayList<>();
             User user = findUserbasedOnId(id);
@@ -42,6 +43,13 @@ public class UserService {
             return resultSet;
     }
 
+    public List<User> getUserFriendSuggestions(String id){
+        return getSuggestedFriendsDetails(id);
+    }
+
+    
+    //helper methods 
+    
     private User findUserbasedOnId(String id){
         if(id == null || id.isEmpty()) {
             return null;
@@ -73,23 +81,15 @@ public class UserService {
             	}
              }
              suggestions.removeAll(nonMutual);
-             System.out.println("suggestions "+ suggestions);
-             System.out.println("nonMutual "+ nonMutual);
             // get details  
      		for(Integer i : suggestions) {
      			User u = findUserbasedOnId(Integer.toString(i));
      			resultSet.add(u);
      		}
-     		System.out.println("final "+ resultSet);
      		// sort by location
      	    Collections.sort(resultSet);
          }
 		
 	    return resultSet;
     }
-
-    public List<User> getUserFriendSuggestions(String id){
-        return getSuggestedFriendsDetails(id);
-    }
-
 }
