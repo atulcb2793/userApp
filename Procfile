@@ -1,1 +1,0 @@
-web: java -jar target/userapp-0.0.1-SNAPSHOT.jar
