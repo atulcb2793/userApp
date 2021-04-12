@@ -1,1 +1,1 @@
-heroku war:deploy target/userapp-0.0.1-SNAPSHOT.war
+war:deploy target/userapp-0.0.1-SNAPSHOT.war
