@@ -1,0 +1,42 @@
+.card-deck {
+  margin: 20px;
+  display: flex;
+  height: 80%;
+  justify-content: center;
+}
+
+.container {
+  background-color: #f0f1f3;
+  width: 100%;
+}
+
+.card {
+  min-height: 200px;
+  min-width: 400px;
+  text-align: center;
+  margin: 10px;
+}
+
+.card-body {
+  margin: 20px;
+}
+
+.header {
+  background-color: #3f4348;
+  color: white;
+  height: 60px;
+  text-align: center;
+  font-size: xx-large;
+  padding: 10px;
+}
+
+small {
+  text-decoration: underline;
+  cursor: pointer;
+  color: blue;
+}
+
+small:hover {
+  text-decoration: none;
+  color: red;
+}

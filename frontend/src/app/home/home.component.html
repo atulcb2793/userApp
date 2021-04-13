@@ -1,0 +1,37 @@
+<div class="col-md-12 header">DeviceAtlas Coding Challenge</div>
+
+<div *ngIf="errorFlag" style="color: red">Error Occured..!</div>
+
+<div class="container">
+  <div class="card-deck">
+    <div class="card" *ngFor="let one of usersData">
+      <div class="card-body">
+        <h5 class="card-title">{{ one.name }}</h5>
+        <p class="card-text">
+          {{ one.city }}
+        </p>
+        <p class="card-text">
+          <small
+            (click)="getUserFriendsData(one.id)"
+            [hidden]="one.friends.length > 1"
+            >{{ one.friends.length }} Friend</small
+          >
+          <small
+            (click)="getUserFriendsData(one.id)"
+            [hidden]="one.friends.length <= 1"
+            >{{ one.friends.length }} Friends</small
+          >
+        </p>
+        <div *ngIf="this.selectedId.has(one.id)">
+          <p *ngFor="let user of one?.friendsDetails">
+            {{ user.name }}, {{ user.city }}
+          </p>
+          <b>Friends suggetion</b>
+          <p *ngFor="let suggest of one?.friendsSuggetion">
+            {{ suggest.name }}, {{ suggest.city }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
